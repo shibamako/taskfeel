@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  priority_item: MyString
+  serialize: 1
+  mukou: false
+
+two:
+  priority_item: MyString
+  serialize: 1
+  mukou: false

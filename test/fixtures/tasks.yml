@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  appointed: 2021-05-08
+  priority: MyString
+  title: MyString
+  category: MyString
+  status: MyString
+  memo: MyText
+
+two:
+  appointed: 2021-05-08
+  priority: MyString
+  title: MyString
+  category: MyString
+  status: MyString
+  memo: MyText

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Appointed:</strong>
+  <%= @task.appointed %>
+</p>
+
+<p>
+  <strong>Priority:</strong>
+  <%= Priority.find(@task.priority).priority_item %>
+</p>
+
+<p>
+  <strong>Priority:</strong>
+  <%= User.find(@task.username).name %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @task.title %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= Category.find(@task.category).category_item %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= Status.find(@task.status).status_item %>
+</p>
+
+<p>
+  <strong>Memo:</strong>
+  <%= @task.memo %>
+</p>
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>

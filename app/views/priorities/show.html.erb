@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Priority item:</strong>
+  <%= @priority.priority_item %>
+</p>
+
+<p>
+  <strong>Serialize:</strong>
+  <%= @priority.serialize %>
+</p>
+
+<p>
+  <strong>Mukou:</strong>
+  <%= @priority.mukou %>
+</p>
+
+<%= link_to 'Edit', edit_priority_path(@priority) %> |
+<%= link_to 'Back', priorities_path %>

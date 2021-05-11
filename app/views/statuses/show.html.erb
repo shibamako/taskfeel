@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Status item:</strong>
+  <%= @status.status_item %>
+</p>
+
+<p>
+  <strong>Serialize:</strong>
+  <%= @status.serialize %>
+</p>
+
+<p>
+  <strong>Mukou:</strong>
+  <%= @status.mukou %>
+</p>
+
+<%= link_to 'Edit', edit_status_path(@status) %> |
+<%= link_to 'Back', statuses_path %>

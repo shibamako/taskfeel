@@ -1,0 +1,32 @@
+<%= form_with(model: priority) do |form| %>
+  <% if priority.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(priority.errors.count, "error") %> prohibited this priority from being saved:</h2>
+
+      <ul>
+        <% priority.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :priority_item %>
+    <%= form.text_field :priority_item %>
+  </div>
+
+  <div class="field">
+    <%= form.label :serialize %>
+    <%= form.number_field :serialize %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mukou %>
+    <%= form.check_box :mukou %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

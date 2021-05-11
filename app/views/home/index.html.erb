@@ -1,0 +1,41 @@
+<h1>dashboard</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>期日までの日数</th>
+      <th>期日</th>
+      <th>優先度</th>
+      <Th>ユーザー</th>
+      <th>タイトル</th>
+      <th>カテゴリー</th>
+      <th>ステータス</th>
+      <th>内容</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @home.each do |task| %>
+      <tr>
+        <% if task.status == "3" %>
+        <td>完了</td>
+        <% elsif task.appointed == Date.today %>
+        <td>本日</td>
+        <% elsif (task.appointed - Date.today).to_i < 0 %>
+        <td><font color="red">期限を<%= (Date.today - task.appointed).to_i %>日過ぎています</font></td>
+        <% else %>
+        <td><%= date_today(task.appointed) %>後</td>
+        <% end %>
+        <td><%= task.appointed %></td>
+        <td><%= Priority.find(task.priority).priority_item %></td>
+        <td><%= User.find(task.username).name %></td>
+        <td><%= task.title %></td>
+        <td><%= Category.find(task.category).category_item %></td>
+        <td><%= Status.find(task.status).status_item %></td>
+        <td><%= task.memo %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+<%= link_to "プロフィール変更", edit_user_registration_path %>

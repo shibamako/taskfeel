@@ -1,0 +1,52 @@
+<%= form_with(model: task) do |form| %>
+  <% if task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+        <% task.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :appointed %>
+    <%= form.date_select :appointed %>
+  </div>
+
+  <div class="field">
+    <%= form.label :priority %>
+    <%= form.collection_select :priority, Priority.where(mukou: true).order(:serialize), :id, :priority_item, {:prompt => true} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :username %>
+    <%= form.collection_select :username, User.where(is_deleted: true), :id, :name, {:prompt => true} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.collection_select :category, Category.where(mukou: true).order(:serialize), :id, :category_item, {:prompt => true} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.collection_select :status, Status.where(mukou: true).order(:serialize), :id, :status_item, {:prompt => true} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :memo %>
+    <%= form.text_area :memo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

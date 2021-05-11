@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category item:</strong>
+  <%= @category.category_item %>
+</p>
+
+<p>
+  <strong>Serialize:</strong>
+  <%= @category.serialize %>
+</p>
+
+<p>
+  <strong>Mukou:</strong>
+  <%= @category.mukou %>
+</p>
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>

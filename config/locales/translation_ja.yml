@@ -1,0 +1,44 @@
+ja:
+  helpers:
+    actions: 操作
+    links:
+      administrator:
+      new: 新規作成
+      back: 一覧に戻る
+      edit: 編集
+      destroy: 削除
+      cancel: キャンセル
+      submit: 保存する
+      request: 申し込み
+      confirm: 削除しますがよろしいですか？
+  activerecord:
+    models:
+      task: タスク
+      priority: 優先度
+      category: カテゴリー
+      status: ステータス
+    attributes:
+      task:
+        id: ID
+        appointed: 期日
+        priority: 優先度
+        username: ユーザー
+        title: タイトル
+        category: カテゴリー
+        status: ステータス
+        memo: 内容
+      priority:
+        id: ID
+        priority_item: 優先度
+        serialize: 表示順
+        mukou: 有効/無効
+      category:
+        id: ID
+        category_item: カテゴリー
+        serialize: 表示順
+        mukou: 有効/無効
+      status:
+        id: ID
+        status_item: ステータス
+        serialize: 表示順
+        mukou: 有効/無効
