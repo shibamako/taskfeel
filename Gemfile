@@ -6,7 +6,11 @@ ruby '2.6.3'
 gem 'devise'
 gem 'ransack'
 gem 'kaminari'
+gem 'kaminari-bootstrap'
 gem 'activeadmin'
+gem 'bootstrap'
+gem 'jquery-rails'
+gem "bootswatch"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
