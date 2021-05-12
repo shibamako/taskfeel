@@ -65,14 +65,14 @@
                 task_path(task), :class => 'btn btn-info btn-xs' %></td>
         <% if task.status == "3" %>
         <td>完了</td>
-        <% elsif task.appointed == Date.today %>
+        <% elsif date_delay(task.appointed) == "0日" %>
         <td>本日</td>
-        <% elsif (task.appointed - Date.today).to_i < 0 %>
-        <td><font color="red">期限を<%= (Date.today - task.appointed).to_i %>日過ぎています</font></td>
+        <% elsif (task.appointed - Time.now).to_i < 0 %>
+        <td><font color="red">期限を<%= date_delay(task.appointed) %>過ぎています</font></td>
         <% else %>
         <td><%= date_today(task.appointed) %>後</td>
         <% end %>
-        <td><%= task.appointed %></td>
+        <td><%= task.appointed.strftime("%Y-%m-%d") %></td>
         <td><%= Priority.find(task.priority).priority_item %></td>
         <td><%= User.find(task.username).name %></td>
         <td><%= task.title %></td>
@@ -89,3 +89,12 @@
     <% end %>
   </tbody>
 </table>
+
+<%= month_calendar events: @taskall do |date, tasks| %>
+  <%= date.day %>
+  <% tasks.each do |task| %>
+      <div>
+        <%= link_to task.title, task %>
+      </div>
+    <% end %>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_10_145403) do
+ActiveRecord::Schema.define(version: 2021_05_12_153959) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2021_05_10_145403) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.date "appointed"
+    t.datetime "appointed"
     t.string "priority"
     t.string "title"
     t.string "category"

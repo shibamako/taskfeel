@@ -18,4 +18,16 @@ end
 
   %(#{month}ヶ月#{day}日)
 end
+
+def date_delay(latter)
+require 'date'
+
+  a = Date.today
+  b = Date.parse(latter.to_s)
+
+  day= (a - b).to_i
+
+
+  %(#{day}日)
+end
 end
