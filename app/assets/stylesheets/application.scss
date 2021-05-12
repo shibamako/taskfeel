@@ -10,6 +10,20 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+
+ @import "bootswatch/minty/variables";
+ @import "bootstrap";
+ @import "bootswatch/minty/bootswatch";
+ @import "*";
+
+ .field_with_errors {
+  display: contents;
+  input {
+    @extend .is-invalid;
+  }
+}
+
+h1 {
+  background: linear-gradient(transparent 70%, #c0c0c0 70%);
+}
