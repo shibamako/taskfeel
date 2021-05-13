@@ -22,13 +22,13 @@
   </div>
 
   <div class="field">
-    <div class="col-2"><%= form.label :priority %></div>
-    <div class="col-2"><%= form.collection_select :priority, Priority.where(mukou: true).order(:serialize), :id, :priority_item, {:prompt => true}, {:class => "form-control"} %></div>
-  </div>
-
-  <div class="field">
     <div class="col-2"><%= form.label :username %></div>
     <div class="col-2"><%= form.collection_select :username, User.where(is_deleted: true), :id, :name, {selected: current_user.id}, {:class => "form-control"} %></div>
+  </div>
+  
+  <div class="field">
+    <div class="col-2"><%= form.label :priority %></div>
+    <div class="col-2"><%= form.collection_select :priority, Priority.where(mukou: true).order(:serialize), :id, :priority_item, {:prompt => true}, {:class => "form-control"} %></div>
   </div>
 
   <div class="field">
