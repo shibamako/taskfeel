@@ -23,22 +23,22 @@
 
   <div class="field">
     <div class="col-2"><%= form.label :priority %></div>
-    <div class="col-2"><%= form.collection_select :priority, Priority.where(mukou: true).order(:serialize), :id, :priority_item, {:prompt => true}, {:class => "form-control"} %></div>
+    <div class="col-2"><%= form.collection_select :priority, Priority.where(mukou: true).order(:serialize), :id, :priority_item, {}, {:class => "form-control"} %></div>
   </div>
 
   <div class="field">
     <div class="col-2"><%= form.label :username %></div>
-    <div class="col-2"><%= form.collection_select :username, User.where(is_deleted: true), :id, :name, {selected: current_user.id}, {:class => "form-control"} %></div>
+    <div class="col-2"><%= form.collection_select :username, User.where(is_deleted: true), :id, :name, {}, {:class => "form-control"} %></div>
   </div>
 
   <div class="field">
     <div class="col-2"><%= form.label :category %></div>
-    <div class="col-2"><%= form.collection_select :category, Category.where(mukou: true).order(:serialize), :id, :category_item, {:prompt => true}, {:class => "form-control"} %></div>
+    <div class="col-2"><%= form.collection_select :category, Category.where(mukou: true).order(:serialize), :id, :category_item, {}, {:class => "form-control"} %></div>
   </div>
 
   <div class="field">
     <div class="col-2"><%= form.label :status %></div>
-    <div class="col-2"><%= form.collection_select :status, Status.where(mukou: true).order(:serialize), :id, :status_item, {:prompt => true}, {:class => "form-control"} %></div>
+    <div class="col-2"><%= form.collection_select :status, Status.where(mukou: true).order(:serialize), :id, :status_item, {}, {:class => "form-control"} %></div>
   </div>
 
   <div class="field">
