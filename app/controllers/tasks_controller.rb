@@ -5,7 +5,7 @@ class TasksController < ApplicationController
   def index
     @q = Task.search(params[:q])
     @tasks = @q.result(distinct: true).page(params[:page]).per(10).order("appointed")
-    @taskall = Task.all
+    @taskall = @q.result(distinct: true)
   end
 
   # GET /tasks/1 or /tasks/1.json

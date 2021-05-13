@@ -94,6 +94,7 @@
   <%= date.day %>
   <% tasks.each do |task| %>
       <div>
+        <%= User.find(task.username).name %>:
         <%= link_to task.title, task %>
       </div>
     <% end %>

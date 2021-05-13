@@ -17,6 +17,7 @@ ja:
       priority: 優先度
       category: カテゴリー
       status: ステータス
+      user: ユーザー
     attributes:
       task:
         id: ID
@@ -42,3 +43,10 @@ ja:
         status_item: ステータス
         serialize: 表示順
         mukou: 有効/無効
+      user:
+        email: Eメール
+        password: パスワード
+        password_confirmation: パスワード（確認用）
+        current_password: 旧パスワード
+        name: 名前
+        is_deleted: 有効/無効

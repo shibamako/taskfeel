@@ -4,6 +4,14 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  before_action :basic
+
+  def basic
+   authenticate_or_request_with_http_basic do |user, pass|
+     user == 'x-feel' && pass == 'XXXXf00l'
+   end
+ end
+
   protected
   def configure_permitted_parameters
     # サインアップ時にnameのストロングパラメータを追加
