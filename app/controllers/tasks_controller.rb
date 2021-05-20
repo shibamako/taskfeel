@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   # GET /tasks or /tasks.json
   def index
     @q = Task.search(params[:q])
-    @tasks = @q.result(distinct: true).page(params[:page]).per(10).order("appointed")
+    @tasks = @q.result(distinct: true).page(params[:page]).per(10).order("id desc")
     @taskall = @q.result(distinct: true)
   end
 
