@@ -33,7 +33,13 @@
         <td><%= User.find(task.username).name %></td>
         <td><%= task.title %></td>
         <td><%= Category.find(task.category).category_item %></td>
-        <td><%= Status.find(task.status).status_item %></td>
+        <% if task.status == "3" %>
+        <td><span class="badge rounded-pill bg-primary"><%= Status.find(task.status).status_item %></span></td>
+        <% elsif task.status == "1" %>
+        <td><span class="badge rounded-pill bg-warning text-dark"><%= Status.find(task.status).status_item %></span></td>
+        <% else %>
+        <td><span class="badge rounded-pill bg-secondary"><%= Status.find(task.status).status_item %></span></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
