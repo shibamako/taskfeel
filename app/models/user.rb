@@ -6,6 +6,9 @@ class User < ApplicationRecord
 
   validates :name, presence: true
 
+  has_many :posts, dependent: :destroy
+  has_many :comments
+
   def active_for_authentication?
      super && self.is_deleted?
   end

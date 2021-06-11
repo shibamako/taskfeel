@@ -18,6 +18,7 @@ ja:
       category: カテゴリー
       status: ステータス
       user: ユーザー
+      post: 投稿
     attributes:
       task:
         id: ID
@@ -28,21 +29,29 @@ ja:
         category: カテゴリー
         status: ステータス
         memo: 内容
+        created_at: 作成日
+        updated_at: 更新日
       priority:
         id: ID
         priority_item: 優先度
         serialize: 表示順
         mukou: 有効/無効
+        created_at: 作成日
+        updated_at: 更新日
       category:
         id: ID
         category_item: カテゴリー
         serialize: 表示順
         mukou: 有効/無効
+        created_at: 作成日
+        updated_at: 更新日
       status:
         id: ID
         status_item: ステータス
         serialize: 表示順
         mukou: 有効/無効
+        created_at: 作成日
+        updated_at: 更新日
       user:
         email: Eメール
         password: パスワード
@@ -50,3 +59,11 @@ ja:
         current_password: 旧パスワード
         name: 名前
         is_deleted: 有効/無効
+      post:
+        id: ID
+        topic: トピック
+        url: URL
+        content: 内容
+        category: カテゴリー
+        created_at: 作成日
+        updated_at: 更新日

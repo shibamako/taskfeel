@@ -16,7 +16,7 @@ module Taskfeel
     #　以下の記述を追記する(設定必須)
     # デフォルトのlocaleを日本語(:ja)にする
     config.i18n.default_locale = :ja
-    
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
@@ -24,5 +24,6 @@ module Taskfeel
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.app_generators.scaffold_controller = :scaffold_controller
   end
 end

@@ -1,0 +1,42 @@
+<%= form_with(model: post) do |form| %>
+  <% if post.errors.any? %>
+    <div class="alert alert-warning">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <div class="col-2"><%= form.label :topic %></div>
+    <div class="col-6"><%= form.text_field :topic %></div>
+  </div>
+
+  <div class="field">
+    <div class="col-2"><%= form.label :url %></div>
+    <div class="col-6"><%= form.text_field :url %></div>
+  </div>
+
+  <div class="field">
+    <div class="col-2"><%= form.label :content %></div>
+    <div class="col-6"><%= form.text_area :content, :size => "10x5" %></div>
+  </div>
+
+  <!-- <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div> -->
+
+  <div class="field">
+    <div class="col-2"><%= form.label :category %></div>
+    <div class="col-2"><%= form.collection_select :category, Category.where(mukou: true).order(:serialize), :id, :category_item, {:prompt => true}, {:class => "form-control"} %></div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
