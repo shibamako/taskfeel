@@ -54,7 +54,7 @@
   <thead>
     <tr>
       <th>詳細</th>
-      <th>トピック</th>
+      <th>トピック（コメント数）</th>
       <th>内容</th>
       <th>ユーザー</th>
       <th>カテゴリー</th>
@@ -68,7 +68,7 @@
       <tr>
         <td><%= link_to t('.show', :default => t("helpers.links.show")),
                 post_path(post), :class => 'btn btn-info btn-xs' %></td>
-        <td><%= post.topic %></td>
+        <td><%= post.topic %>（<%= post.comments.count %>）</td>
         <td><%= post.content.truncate(40) %></td>
         <td><%= User.find(post.user_id).name %></td>
         <td><%= Category.find(post.category).category_item %></td>
