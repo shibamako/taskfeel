@@ -14,7 +14,7 @@ class TasksController < ApplicationController
 
   # GET /tasks/new
   def new
-    @task = Task.new
+    @task = Task.new(:appointed => params[:format])
   end
 
   # GET /tasks/1/edit

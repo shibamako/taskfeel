@@ -115,7 +115,7 @@
 </table>
 
 <%= month_calendar events: @taskall do |date, tasks| %>
-  <%= date.day %>
+  <%= link_to date.day, new_task_path(date) %>
   <% tasks.each do |task| %>
       <div>
         <% if task.status == "3" %>

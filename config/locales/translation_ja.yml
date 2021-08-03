@@ -56,7 +56,7 @@ ja:
         email: Eメール
         password: パスワード
         password_confirmation: パスワード（確認用）
-        current_password: 旧パスワード
+        current_password: 現在のパスワード
         name: 名前
         is_deleted: 有効/無効
       post:
