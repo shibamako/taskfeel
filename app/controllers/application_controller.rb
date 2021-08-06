@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   def basic
    authenticate_or_request_with_http_basic do |user, pass|
-     user == 'unborder' && pass == '68251700'
+     user == 'xxxxxxxx' && pass == '00000000'
    end
  end
 
