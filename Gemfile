@@ -12,6 +12,7 @@ gem 'bootstrap'
 gem 'jquery-rails'
 gem "bootswatch"
 gem 'simple_calendar'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'rspec-rails'
