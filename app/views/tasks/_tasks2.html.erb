@@ -1,0 +1,39 @@
+<%= month_calendar events: @taskall do |date, tasks| %>
+  <%= link_to date.day, new_task_path(date), "data-bs-whatever" => date.strftime("%Y-%m-%d"), "data-bs-toggle" => "modal", "data-bs-target" => "#exampleModal" %>
+  <% tasks.each do |task| %>
+      <div>
+        <% if task.status == "3" %>
+        <span class="badge rounded-pill bg-primary"><%= Status.find(task.status).status_item %></span>
+        <% elsif task.status == "1" %>
+        <span class="badge rounded-pill bg-warning text-dark"><%= Status.find(task.status).status_item %></span>
+        <% else %>
+        <span class="badge rounded-pill bg-secondary"><%= Status.find(task.status).status_item %></span>
+        <% end %>
+        <%= link_to task.title, task %>
+        （<%= User.find(task.username).name %>）
+      </div>
+    <% end %>
+  <% end %>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Task新規作成</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <%= render 'form', task: @task %>
+        </div>
+      </div>
+    </div>
+  </div>
+<script>
+  var exampleModal = document.getElementById('exampleModal')
+  exampleModal.addEventListener('show.bs.modal', function (event) {
+  var button = event.relatedTarget
+  var recipient = button.getAttribute('data-bs-whatever')
+  var modalBodyInput = exampleModal.querySelector('.date')
+  modalBodyInput.value = recipient
+})
+</script>

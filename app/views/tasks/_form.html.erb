@@ -1,4 +1,4 @@
-<%= form_with(model: task) do |form| %>
+<%= form_for @task, remote: true do |form| %>
   <% if task.errors.any? %>
   <div class="alert alert-warning">
       <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
@@ -13,37 +13,37 @@
 
   <div class="field">
     <div class="col-2"><%= form.label :title %></div>
-    <div class="col-6"><%= form.text_field :title, :class => "form-control" %></div>
+    <div class="col-12"><%= form.text_field :title, :class => "form-control" %></div>
   </div>
 
   <div class="field">
     <div class="col-2"><%= form.label :appointed %></div>
-    <div class="col-2"><%= form.date_field :appointed, :class => "form-control" %></div>
+    <div class="col-5"><%= form.date_field :appointed, :class => "form-control date" %></div>
   </div>
 
   <div class="field">
     <div class="col-2"><%= form.label :username %></div>
-    <div class="col-2"><%= form.collection_select :username, User.where(is_deleted: true), :id, :name, {selected: current_user.id}, {:class => "form-control"} %></div>
+    <div class="col-5"><%= form.collection_select :username, User.where(is_deleted: true), :id, :name, {selected: current_user.id}, {:class => "form-control"} %></div>
   </div>
 
   <div class="field">
     <div class="col-2"><%= form.label :priority %></div>
-    <div class="col-2"><%= form.collection_select :priority, Priority.where(mukou: true).order(:serialize), :id, :priority_item, {:prompt => true}, {:class => "form-control"} %></div>
+    <div class="col-5"><%= form.collection_select :priority, Priority.where(mukou: true).order(:serialize), :id, :priority_item, {:prompt => true}, {:class => "form-control"} %></div>
   </div>
 
   <div class="field">
     <div class="col-2"><%= form.label :category %></div>
-    <div class="col-2"><%= form.collection_select :category, Category.where(mukou: true).order(:serialize), :id, :category_item, {:prompt => true}, {:class => "form-control"} %></div>
+    <div class="col-5"><%= form.collection_select :category, Category.where(mukou: true).order(:serialize), :id, :category_item, {:prompt => true}, {:class => "form-control"} %></div>
   </div>
 
   <div class="field">
     <div class="col-2"><%= form.label :status %></div>
-    <div class="col-2"><%= form.collection_select :status, Status.where(mukou: true).order(:serialize), :id, :status_item, {:prompt => true}, {:class => "form-control"} %></div>
+    <div class="col-5"><%= form.collection_select :status, Status.where(mukou: true).order(:serialize), :id, :status_item, {:prompt => true}, {:class => "form-control"} %></div>
   </div>
 
   <div class="field">
     <div class="col-2"><%= form.label :memo %></div>
-    <div class="col-4"><%= form.text_area :memo, :class => "form-control", :size => "10x5" %></div>
+    <div class="col-12"><%= form.text_area :memo, :class => "form-control", :size => "10x5" %></div>
   </div>
 
   <div class="actions">
