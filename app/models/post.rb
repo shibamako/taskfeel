@@ -3,4 +3,6 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   validates :topic, :content, :category, presence: true
+
+  mount_uploaders :images, ImageUploader
 end

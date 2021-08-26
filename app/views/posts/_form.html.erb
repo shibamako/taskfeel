@@ -36,6 +36,17 @@
     <div class="col-2"><%= form.collection_select :category, Category.where(mukou: true).order(:serialize), :id, :category_item, {:prompt => true}, {:class => "form-control"} %></div>
   </div>
 
+  <div class="field">
+    <div class="col-2"><%= form.label :images %></div>
+    <div class="col-4"><%= form.file_field :images, multiple: true %></div>
+  </div>
+  <% if @post.persisted? && @post.images? %>
+     <label>
+       <%= form.check_box :remove_images %>
+       画像を削除
+     </label>
+   <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>

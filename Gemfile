@@ -13,6 +13,9 @@ gem 'jquery-rails'
 gem "bootswatch"
 gem 'simple_calendar'
 gem 'dotenv-rails'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog-aws'
 
 group :development, :test do
   gem 'rspec-rails'

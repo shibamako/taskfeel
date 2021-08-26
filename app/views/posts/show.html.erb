@@ -31,6 +31,13 @@
   <div class="col-4"><h5><%= @post.updated_at.strftime("%Y-%m-%d %H:%M") %></h5></div>
 </div>
 
+<% @post.images.each do |image| %>
+<div class="row">
+  <div class="col-1" align="right"><h5>画像</h5></div>
+  <div class="col-4"><%= image_tag image.to_s %></div>
+</div>
+<% end %>
+
 <h1>コメント一覧</h1>
 <% @comments.each do |c| %>
   <div>

@@ -65,5 +65,6 @@ ja:
         url: URL
         content: 内容
         category: カテゴリー
+        images: 画像
         created_at: 作成日
         updated_at: 更新日
